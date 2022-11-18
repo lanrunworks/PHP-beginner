@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>rei32</title>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        jQuery(function () {
+            var $view = $('#view');
+            var $data = $('input[name="data"]');
+            $('#add').submit(function () {
+                //イベントのデフォルトの処理を無効化
+                event.preventDefault();
+
+                //非同期通信を実際に行っているところ
+                //データを送るファイルのパス,送るデータ(JSON形式),phpの処理結果を受け取る場所
+                $.post('rei32.php', { data: $data.val() }, function (data) {
+                    //入力バーを空に
+                    $data.val('');
+                    $view.html(data);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <p>入力した文字列がPHPで加工されて表示されます。</p>
+        <form id="add" action="rei32.php" method="post">
+            コメント：<input type="text" name="data" value="" size="30" />
+            <input type="submit" value="送信" />
+        </form>
+        <hr>
+        <div id="view">
+            加工された文字列がここに表示される
+        </div>
+    </div>
+</body>
+
+</html>

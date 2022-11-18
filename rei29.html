@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>rei29</title>
+	<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script>
+		jQuery(function () {
+			// id属性に「btnShow」が設定されている部品(ボタン)がクリックされた時の処理を記述
+			// jQueryでイベント処理を記述する場合、「onclick」ではなく「click」となる
+			$("#btnShow").click(function () {
+				// テキストボックス(id属性：userName)に入力された文字列を取得
+				var uname = $("#userName").val();
+				if (uname == "") {
+					$("h3").remove();
+					$("form").after("<h3>エラー：名前が未入力です</h3>");
+				} else {
+					$("h3").remove();
+					// formタグの次(after)に新しいHTMLタグ(H3)を追加
+					$("form").after("<h3>ようこそ、" + uname + "さん</h3>");
+				}
+			});
+		}); 
+	</script>
+</head>
+
+<body>
+	<h1>jQueryのサンプル</h1>
+	<p>氏名を入力し、[表示]ボタンをクリックして下さい(jQuery版)</p>
+	<hr>
+	<form>
+		氏名：<input type="text" id="userName">
+		<input type="button" value="表示" id="btnShow">
+	</form>
+</body>
+
+</html>

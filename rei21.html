@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>rei21</title>
+</head>
+<body>
+    <h1>複数項目選択</h1>
+    <hr>
+
+    <form action="rei21.php" method="get">
+        <!--
+            複数項目選択はtype属性にcheckbox
+            複数の項目はname属性を同じ名前にして、さらに配列を表す[]をつける
+        -->
+        
+        <p>
+            <input type="checkbox" name="sports[]" value="baseball">野球
+            <input type="checkbox" name="sports[]" value="soccer">サッカー
+            <input type="checkbox" name="sports[]" value="bascketball">バスケットボール
+            <input type="checkbox" name="sports[]" value="other">その他
+        </p>
+        <input type="submit" value="送信">
+    </form>
+</body>
+</html>

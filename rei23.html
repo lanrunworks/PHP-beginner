@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rei23</title>
+</head>
+
+<body>
+    <h1>郵便番号のチェック（PHP）</h1>
+    <form action="rei23.php" method="get">
+        郵便番号の入力：
+        <input type="text" name="pcode" size="30">
+        <input type="submit" value="チェック">
+    </form>
+    <hr>
+
+
+    <h1>郵便番号のチェック（HTML）</h1>
+    <form method="get">
+        郵便番号の入力：
+        <input type="text" pattern="^[0-9]{3}-[0-9]{4}$" size="30">
+        <input type="submit" value="チェック">
+    </form>
+    <hr>
+
+
+    <h1>メールアドレスのチェック（HTML）</h1>
+    <form method="get">
+        メールアドレスの入力：
+        <input type="email" size="30">
+        <input type="submit" value="チェック">
+    </form>
+
+    
+</body>
+
+</html>

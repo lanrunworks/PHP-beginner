@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>rei31</title>
+	<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script>
+
+		jQuery(function () {
+			// showアニメーションの設定(2秒で表示)
+			$("#btnShow").click(function () {
+				$("#target").show();
+			});
+			// hideアニメーションの設定(2秒で非表示)
+			$("#btnHide").click(function () {
+				$("#target").hide();
+			});
+			// fadeInアニメーションの設定(2秒で表示)
+			$("#btnFadeIn").click(function () {
+				$("#target").fadeIn();
+			});
+			// showアニメーションの設定(2秒で非表示)
+			$("#btnFadeOut").click(function () {
+				$("#target").fadeOut();
+			});
+		}); 
+
+	</script>
+</head>
+
+<body>
+	<h1>jQueryのサンプル</h1>
+	<p>ボタンを押すと、各種アニメーションが実行される</p>
+	<hr>
+	<h1 id="target">この文章にアニメーション効果を設定しています</h1>
+	<form>
+		<input type="button" value="表示" id="btnShow">
+		<input type="button" value="非表示" id="btnHide">
+		<input type="button" value="フェードイン" id="btnFadeIn">
+		<input type="button" value="フェードアウト" id="btnFadeOut">
+	</form>
+</body>
+
+</html>

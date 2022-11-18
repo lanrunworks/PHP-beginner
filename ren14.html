@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ren14</title>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
+    <script>
+        jQuery(function ($) {
+            //phpから受け取った情報を入力する要素
+            var $view = $('#view');
+            //phpに送るデータ（コメント）を取ってくる要素
+            var $data = $('input[name="data"]');
+            
+            //ren14で追加  phpに送るデータ（ユーザ名）を取ってくる要素
+            var $userName = $('input[name="userName"]');
+
+
+            
+            //ボタンを押した時の処理
+            $('#add').submit(function () {
+                //本来のsubmitイベントを無効化
+                event.preventDefault();
+                //POSTメソッドでren14.phpに二つのデータを送る                               //phpの実行結果が帰ってくる場所
+                $.post('ren14.php', { data: $data.val(), userName: $userName.val() }, function (data) {
+                    //コメントの入力エリアを空にする
+                    $data.val('');
+                    //phpの実行結果をもとに画面に表示する
+                    $view.html(data);
+                });
+            });
+
+            //一定時間ごとに更新する処理
+            function newinfo() {
+                $.post('ren14.php', {}, function (data) {
+                    $view.html(data);
+                });
+            }
+
+            //更新する時間を数える処理
+            setInterval(newinfo, 3000);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <p>名前とコメントを入力して送信ボタンを押してください。</p>
+        <p>コメント未入力で送信ボタンを押すとページを更新します。</p>
+        <form id="add" action="ren14.php" method="post">
+            <!--追加-->
+            名前：<input type="text" name="userName" value="" size="10" />
+            コメント：<input type="text" name="data" value="" size="30" />
+            <input type="submit" value="送信" />
+        </form>
+        <hr>
+        <div id="view">
+            <!--ここにデータが入る-->
+        </div>
+    </div>
+</body>
+
+</html>

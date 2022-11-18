@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>rei18</title>
+    </head>
+<body>
+    <h2>データの入力</h2>
+    <hr>
+    <!-- クライアントからサーバにデータを送信するにはformタグを使用する
+    action属性は、送信されたデータを処理するプログラム名
+    method属性はgetかpostを使用する -->
+
+    <form action="rei18_ShowName.php" method="post">
+    <!-- <form action="rei18_ShowName.php" method="get"> -->
+        
+        <!-- 1行入力はinputタグでtype属性にtext
+        name属性は送信するでーたの変数名（キー）
+        size属性はコントロールの幅 -->
+        <p>名前の入力：<input type="text" name="userName" size="100"></p>
+        <!-- データをサーバに送信するにはinputタグで、type属性にsubmitを使う
+        value属性は値、表示の内容 -->
+        <input type="submit" value="送信">
+    </form>
+</body>

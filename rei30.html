@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>rei30</title>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        jQuery(function () {
+            $("#typo")
+                // マウスを対象物の上に合せた時のイベント処理の記述
+                .on('mouseover', function () {
+                    $("#typo").css("color", "red");
+                })
+                // マウスを対象物の上から離した時のイベント処理の記述
+                .on('mouseout', function () {
+                    $("#typo").css("color", "");
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>jQueryのサンプル</h1>
+    <p>文字の上にマウスカーソルを合わせると、文字色が変わる</p>
+    <hr>
+    <h1 id="typo">スマート情報システム科</h1>
+</body>
+
+</html>

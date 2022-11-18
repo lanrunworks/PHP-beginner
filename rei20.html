@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>rei20</title>
+</head>
+<body>
+    <h1>複数行入力</h1>
+    <hr>
+
+    <form action="rei20.php" method="get">
+        <!--
+            単一項目選択（ラジオボタン）はtype属性にradio
+            name属性は同じ値とする
+            value属性は選択した項目の値
+        -->
+        
+        <p>
+            <input type="radio" name="sedai" value=1 checked>20歳未満
+            <input type="radio" name="sedai" value=2>20歳～29歳
+            <input type="radio" name="sedai" value=3>30歳～39歳
+            <input type="radio" name="sedai" value=4>40歳～49歳
+            <input type="radio" name="sedai" value=5>50歳以上
+        </p>
+        <input type="submit" value="送信">
+    </form>
+</body>
+</html>

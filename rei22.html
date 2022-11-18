@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>rei20</title>
+</head>
+<body>
+    <h1>一覧項目選択</h1>
+    <hr>
+
+    <form action="rei22.php" method="get">
+        <!--
+            一覧項目選択はselectタグとoptionタグを組み合わせる
+            selectタグにはname属性を設定
+            各選択項目はoptionタグで追加する、値をvalue属性で設定する
+        -->
+        
+        <p>
+            <select name="sedai">
+                <option value=0></option>
+                <option value=1>20歳未満</option>
+                <option value=2>20歳～29歳</option>
+                <option value=3>30歳～39歳</option>
+                <option value=4>40歳～49歳</option>
+                <option value=5>50歳以上</option>
+            </select>
+            
+        </p>
+        <input type="submit" value="送信">
+    </form>
+</body>
+</html>
