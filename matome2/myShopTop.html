@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ショッピングサイト（簡易版）</title>
+</head>
+
+<body>
+    <h2>ショッピングサイト（商品選択）</h2>
+    <form action="myShopDataSave.php" method="get">
+        <select name="item">
+            <option value="コンピュータ,49800">コンピュータ,49800円</option>
+            <option value="モニター,19800">モニター,19800円</option>
+            <option value="プリンタ,29800">プリンタ,29800円</option>
+            <option value="デジタルカメラ,9800">デジタルカメラ,9800円</option>
+            <option value="デジタルビデオ,49800">デジタルビデオ,49800円</option>
+        </select>
+        <input type="submit" value="カートに入れる">
+    </form>
+    <br>
+    <form action="myShopList.php" method="get">
+        <input type="submit" value="カートを見る">
+    </form>
+</body>
+
+</html>
